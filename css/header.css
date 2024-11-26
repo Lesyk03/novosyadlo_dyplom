@@ -131,13 +131,14 @@ h1 {
     font-size: 1.5rem;
     line-height: 3rem;
     color: inherit;
-    
+
 }
+
 .header-nav__icons {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
+
 }
 
 
@@ -148,7 +149,8 @@ h1 {
     height: 26px;
     margin: 0px 5px;
 }
-.header-nav__icons__yt img{
+
+.header-nav__icons__yt img {
     height: 26px;
 }
 
@@ -185,6 +187,3 @@ h1 {
         color: #ffffff;
     }
 }
-
-
-
