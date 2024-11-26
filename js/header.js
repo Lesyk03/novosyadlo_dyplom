@@ -8,7 +8,7 @@
         iconBurger.classList.toggle("active");
         navigationsBody.classList.toggle("active");
     });
-    const navLinks = document.querySelectorAll(".nav-menu__item");
+    const navLinks = document.querySelectorAll(".nav-menu-item");
     navLinks.forEach((navLink) => {
         navLink.addEventListener("click",(_)=> {
             if (iconBurger.classList.contains("active")) {
