@@ -1,6 +1,14 @@
+body.lock {
+    overflow: hidden;
+}
+
 .header {
     background-color: #232230;
+    min-width: 320px;
+    margin: auto;
+    padding: 20px;
 }
+
 .header-container {
     display: flex;
     flex-direction: row;
@@ -8,9 +16,11 @@
 
 .header-logo {
     width: 200px;
-    height: 39px; 
+    height: 39px;
     display: flex;
+    z-index: 10;
 }
+
 h1 {
     visibility: hidden;
     width: 100%;
@@ -22,3 +32,112 @@ h1 {
     flex-direction: column;
 }
 
+.nav-burger {
+    display: block;
+    position: absolute;
+    right: 10px;
+    width: 24px;
+    height: 22px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.nav-burger span,
+.nav-burger::before,
+.nav-burger::after {
+    position: absolute;
+    left: 0;
+    height: 2.5px;
+    width: 100%;
+    background-color: #ffffff;
+    transition: all 0.5s ease-in-out;
+}
+
+.nav-burger span {
+    transform: scale(1);
+}
+
+.nav-burger::before,
+.nav-burger::after {
+    content: " ";
+}
+
+.nav-burger::before {
+    top: 0;
+}
+
+.nav-burger::after {
+    bottom: 0;
+}
+
+.nav-burger.active span {
+    transform: scale(0);
+}
+
+.nav-burger.active::before {
+    top: 50%;
+    transform: rotate(-405deg);
+}
+
+.nav-burger.active::after {
+    bottom: 40%;
+    transform: rotate(405deg);
+}
+
+.header-nav-menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 2;
+    padding: 15px 24px 50px 24px;
+    transition: top 0.3s ease-in 0.1s;
+    overflow: hidden;
+    margin: auto;
+}
+
+.header-nav-menu.active {
+    top: 0%;
+}
+
+.header-container.active {
+    top: 0%;
+}
+
+.nav-menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: auto;
+    height: auto;
+    z-index: 10;
+    padding-top: 100px;
+    padding-inline-start: 0px;
+}
+.nav-menu__item {
+    margin: auto 10px;
+    text-align: center;
+    list-style: none;
+    line-height: 42px;
+  }
+.header-nav__menu-item {
+    text-decoration: none;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  color: inherit;
+}
+@media (min-width: 991px) {
+    body.lock {
+      overflow: visible;
+    }
+  
+    .header {
+    max-width: 1200px;
+    }
+
+}
