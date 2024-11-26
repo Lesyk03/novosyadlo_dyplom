@@ -1,77 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Marketing Agency</title>
-    <link rel="shortcut icon" href="img/icon.png">
-    <link rel="stylesheet" href="css/index.css">
-</head>
-<body>
-    <header>
-        <nav class="header-container container">
-            <div class="header-logo-container">
-                <a href="./" class="header-logo">
-                    <img src="img/logo-c-band.svg" class="header-logo-img" alt="Logo C-band">  
-                    <h1 class="header-logo-title">C-band</h1>
-                </a>
+    <link rel="shortcut icon" href="img/icon.png" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header-container container">
+          <div class="header-logo-container">
+            <a href="./" class="header-logo">
+              <img
+                src="img/logo-c-band.svg"
+                class="header-logo-img"
+                alt="Logo C-band" />
+              <h1 class="header-logo-title">C-band</h1>
+              <div class="nav-burger">
+                <span></span>
             </div>
-            <div class="nav-burger">
-                <label for="burger-checkbox" class="burger-icon">☰</label>
-                <input id="burger-checkbox" class="burger-checkbox" type="checkbox">
-            </div>
-            <div class="header-nav-menu">
+            </a>
+          </div>
+          <div class="header-nav-menu">
+            <ul class="nav-menu">
+              <li class="nav-menu-item">
                 <a class="header-nav__menu-item" href="#about">About us</a>
+              </li>
+              <li class="nav-menu-item">
                 <a class="header-nav__menu-item" href="#services">Services</a>
-                <a class="header-nav__menu-item" href="#testimonials">Testimonials</a>
+              </li>
+              <li class="nav-menu-item">
+                <a class="header-nav__menu-item" href="#testimonials">
+                  Testimonials
+                </a>
+              </li>
+              <li class="nav-menu-item">
                 <a class="header-nav__menu-item" href="#contacts">Contacts</a>
-                <div class="header-nav__icons">
-                    <a href="fb.com" class="header-nav__icons__fb"><img src="img/fb-icon.png" alt="facebook icon"></a>
-                    <a href="instagram.com" class="header-nav__icons__inst"><img src="img/inst-logo.jfif" alt="instagram icon"></a>
-                    <a href="youtube.com" class="header-nav__icons__yt"><img src="img/yt-logo.jfif" alt="youtube icon"></a>
-                </div>
+              </li>
+            </ul>
+            <div class="header-nav__icons">
+              <a href="fb.com" class="header-nav__icons__fb">
+                <img src="img/fb-icon.png" alt="facebook icon" />
+              </a>
+              <a href="instagram.com" class="header-nav__icons__inst">
+                <img src="img/inst-logo.jfif" alt="instagram icon" />
+              </a>
+              <a href="youtube.com" class="header-nav__icons__yt">
+                <img src="img/yt-logo.jfif" alt="youtube icon" />
+              </a>
             </div>
-        </nav>
+          </div>
+      </nav>
     </header>
     <main>
-        <section class="previev container">
-            <div class="previev-text-container">
-                <h2 class="previev-title">All kinds of content creation services</h2>
-                <h1 class="previev-text-title">Content Band</h1>
-                <p class="previev__text">We are a team of professional strategists, editors, designers, and copywriters that create all kinds of content that sell and boost your brand awareness across all channels.</p>
-            </div>
-            <div class="previev__btns">
-                    <button class="previev__btn-contact-us">Contact us</button>
-                    <button class="previev__btn-pricing">Pricing</button>
-            </div>
-        </section>
-        <section id="about" class="about-us container">
-            <div class="about__text-container">
-                <h2 class="about__title">Why choose us?</h2>
-                <h3 class="about__text__title">We Offer Effective Content Solutions</h3>
-                <p class="about__text">In 2022, it's hard to imagine a brand that doesn't produce its own content aimed at achieving specific business goals. These may be as follows:</p>
-            </div>
-            <div class="about__card-container">
-                <div class="sales-card">
-                    <img src="img/icon-sales.svg" alt="coin icon">
-                    <h4 class="sales-card__title">Making More Sales</h4>
-                    <p class="sales-card__text">We create pieces of content that really sell. We target your potential customers with helpful guides, product descriptions, emails, and other types of content that boost sales and improve conversions.</p>
-                </div>
-                <div class="awareness-card">
-                    <img src="img/icon-awarenes.svg" alt="medal icon">
-                    <h4 class="awareness-card__title">Improving Brand Awareness</h4>
-                    <p class="awareness-card__text">Blog articles, guest posts, and other types of interesting content can prove to your potential customers that you are a professional in your industry and a company/person they can trust.</p>
-                </div>
-                <div class="launching-card">
-                    <img src="img/icon-launching.svg" alt="loudspeaker icon">
-                    <h4 class="launching-card__title">Launching Ad Campaigns</h4>
-                    <p class="launching-card__text">Copy is needed not only for product descriptions and blogs but also for launching ad campaigns in Google Ads and socials. We will write advertising texts and set the campaigns for you.</p>
-                </div>
-            </div>
-        </section>
+      <section class="previev container">
+        <div class="previev-text-container">
+          <h2 class="previev-title">All kinds of content creation services</h2>
+          <h1 class="previev-text-title">Content Band</h1>
+          <p class="previev__text">
+            We are a team of professional strategists, editors, designers, and
+            copywriters that create all kinds of content that sell and boost
+            your brand awareness across all channels.
+          </p>
+        </div>
+        <div class="previev__btns">
+          <button class="previev__btn-contact-us">Contact us</button>
+          <button class="previev__btn-pricing">Pricing</button>
+        </div>
+      </section>
+      <section id="about" class="about-us container">
+        <div class="about__text-container">
+          <h2 class="about__title">Why choose us?</h2>
+          <h3 class="about__text__title">
+            We Offer Effective Content Solutions
+          </h3>
+          <p class="about__text">
+            In 2022, it's hard to imagine a brand that doesn't produce its own
+            content aimed at achieving specific business goals. These may be as
+            follows:
+          </p>
+        </div>
+        <div class="about__card-container">
+          <div class="sales-card">
+            <img src="img/icon-sales.svg" alt="coin icon" />
+            <h4 class="sales-card__title">Making More Sales</h4>
+            <p class="sales-card__text">
+              We create pieces of content that really sell. We target your
+              potential customers with helpful guides, product descriptions,
+              emails, and other types of content that boost sales and improve
+              conversions.
+            </p>
+          </div>
+          <div class="awareness-card">
+            <img src="img/icon-awarenes.svg" alt="medal icon" />
+            <h4 class="awareness-card__title">Improving Brand Awareness</h4>
+            <p class="awareness-card__text">
+              Blog articles, guest posts, and other types of interesting content
+              can prove to your potential customers that you are a professional
+              in your industry and a company/person they can trust.
+            </p>
+          </div>
+          <div class="launching-card">
+            <img src="img/icon-launching.svg" alt="loudspeaker icon" />
+            <h4 class="launching-card__title">Launching Ad Campaigns</h4>
+            <p class="launching-card__text">
+              Copy is needed not only for product descriptions and blogs but
+              also for launching ad campaigns in Google Ads and socials. We will
+              write advertising texts and set the campaigns for you.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
-        <div class="container"></div>
+      <div class="container"></div>
     </footer>
-</body>
+  </body>
 </html>
