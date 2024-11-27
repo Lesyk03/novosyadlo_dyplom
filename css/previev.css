@@ -6,17 +6,17 @@
 }
 
 .previev-title {
-    color: rgb(230, 169, 36);
+    color: var(--secondary-text-color);
     font-size: 1.2rem;
 }
 
 .previev-text-title {
-    color: azure;
+    color: var(--primary-text-color);
     font-size: 3.5rem;
 }
 
 .previev__text {
-    color: rgb(161, 181, 200);
+    color: var(--light-text-color);
     font-size: 18px;
 }
 
@@ -43,24 +43,24 @@
 
 .previev__btn-contact-us {
     width: 132px;
-    background-color: rgb(118, 108, 245);
-    color: aliceblue;
-    border-color: rgb(118, 108, 245);
+    background-color: var(--primary-button-background-color);
+    color: var(--primary-text-color);
+    border-color: var(--primary-button-background-color);
     margin-right: 20px;
 }
 .previev__btn-contact-us:hover {
-    background-color: rgb(230, 169, 36);
-    border-color: rgb(230, 169, 36);
+    background-color: var(--secondary-text-color);
+    border-color: var(--secondary-text-color);
 }
 
 
 .previev__btn-pricing {
     width: 100px;
-    background-color: #232230;
-    border-color: #ffffff;
-    color: #ffffff;
+    background-color: var(--secondary-background-color);
+    border-color: var(--primary-text-color);
+    color: var(--primary-text-color);
 }
 .previev__btn-pricing:hover {
-    background-color: #ffffff;
-    color: #232230;
+    background-color: var(--primary-text-color);
+    color: var(--secondary-background-color);
 }
