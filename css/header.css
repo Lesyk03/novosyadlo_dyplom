@@ -186,4 +186,7 @@ h1 {
         z-index: 10;
         color: #ffffff;
     }
+    .header-nav__icons {
+        margin:auto;
+    }
 }

@@ -9,6 +9,7 @@
 :root {
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
+    min-width: 320px;
 }
 
 img {
