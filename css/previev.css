@@ -1,0 +1,21 @@
+.previev {
+    background: url(../img/cover-bg.png) no-repeat;
+}
+.previev-title {
+    color: rgb(230, 169, 36);
+    font-size: inherit;
+}
+.previev-text-title {
+    color: azure;
+    font-size: xx-large;
+}
+.previev__text {
+    color: rgb(161, 181, 200);
+    font-size: 18px;
+}
+.previev-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    
+}
