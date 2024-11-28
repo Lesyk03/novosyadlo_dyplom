@@ -116,3 +116,9 @@
         grid-column-end: 4;
     }
 }
+.about-under-bg-photo {
+    height: 100px;
+    background: url(../img/line-bg-about.svg) ;
+    background-position: 40% 50%;
+    max-width: 2000px;
+}
