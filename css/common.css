@@ -18,6 +18,9 @@
     --light-text-color: rgb(161, 181, 200);
     --satuated-text-color: rgb(34, 160, 233);
     --dark-background-color: rgb(40, 39, 55);
+    --primary-title-color: rgb(118, 108, 245);
+    --dark-title-color:rgb(35, 34, 48);
+    --dark-text-color:rgb(67, 85, 103);
 }
 
 img {
