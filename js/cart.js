@@ -1,132 +1,100 @@
 const getProducts = async () => {
     const response = await fetch("https://fakestoreapi.com/products?limit=9");
-    const products = await response.json();
-    return products;
+    return await response.json();
   };
   
   const renderProducts = async () => {
     const products = await getProducts();
     const container = document.querySelector(".products-container");
-    for (const item of products) {
-      // creating elements
-      const productWrapper = document.createElement("li");
-      const productImg = document.createElement("img");
-      const productTitle = document.createElement("h4");
-      const productDescription = document.createElement("p");
-      const productPriceSection = document.createElement("section");
-      const productPrice = document.createElement("span");
-      const productBuyBtn = document.createElement("button");
-      // setting values for elements
-      productWrapper.classList.add("product-item");
-      productPriceSection.classList.add("product-item-price");
-      productImg.src = item.image;
-      productTitle.innerText = item.title;
-      productDescription.innerText = item.description;
-      productPrice.innerText = `${item.price}$`;
-      productBuyBtn.innerText = "Add to cart";
-      productBuyBtn.addEventListener("click", () => addToCart(item));
-      // appending elements inside the wrappers
-      productPriceSection.append(productPrice, productBuyBtn);
-      productWrapper.append(
-        productImg,
-        productTitle,
-        productDescription,
-        productPriceSection
-      );
-      container.append(productWrapper);
-    }
-  };
   
-  const removeProductFromCart = (event) => {
-    event.target.parentElement.parentElement.remove();
-    const cartListItems = document.getElementsByClassName("cart-list-item");
-    updateCartTotal();
-    if (!cartListItems.length) {
-      const cartListWrapper = document.querySelector(".cart-list-wrapper");
-      const emptyCartTitle = document.querySelector(".cart-empty-title");
-      cartListWrapper.style.display = "none";
-      emptyCartTitle.style.display = "block";
-    }
+    products.forEach(product => {
+      const item = document.createElement("li");
+      item.classList.add("product-item");
+  
+      item.innerHTML = `
+        <img src="${product.image}" alt="${product.title}">
+        <h4>${product.title}</h4>
+        <p>${product.description}</p>
+        <section class="product-item-price">
+          <span>${product.price}$</span>
+          <button class="add-to-cart">Add to cart</button>
+        </section>
+      `;
+  
+      item.querySelector(".add-to-cart").addEventListener("click", () => addToCart(product));
+      container.appendChild(item);
+    });
   };
   
   const addToCart = (product) => {
-    const cartItems = document.getElementsByClassName("cart-list-item");
-    for (const item of cartItems) {
-      if (product.id === +item.getAttribute("id")) {
-        const quantityInput = item.querySelector(
-          ".cart-list-quantity-section > input"
-        );
-        quantityInput.value++;
-        updateCartTotal();
-        return;
-      }
-    }
     const cart = document.querySelector(".cart-list");
-    const emptyCartTitle = document.querySelector(".cart-empty-title");
     const cartListWrapper = document.querySelector(".cart-list-wrapper");
-    // creating elements
-    const cartListItem = document.createElement("li");
-    const cartListImgSection = document.createElement("section");
-    const cartListPriceSection = document.createElement("section");
-    const cartListQuantitySection = document.createElement("section");
-    const image = document.createElement("img");
-    const title = document.createElement("h4");
-    const price = document.createElement("span");
-    const quantity = document.createElement("input");
-    const removeBtn = document.createElement("button");
-    quantity.addEventListener("change", updateCartTotal);
-    removeBtn.addEventListener("click", (event) =>
-      removeProductFromCart(event, product)
-    );
-    // setting values
-    cartListItem.classList.add("cart-list-item");
-    cartListImgSection.classList.add(
-      "cart-list-item-section",
-      "cart-list-img-section"
-    );
-    cartListPriceSection.classList.add(
-      "cart-list-item-section",
-      "cart-list-price-section"
-    );
-    cartListQuantitySection.classList.add(
-      "cart-list-item-section",
-      "cart-list-quantity-section"
-    );
+    const emptyCartTitle = document.querySelector(".cart-empty-title");
+    
+    const existingItem = [...document.getElementsByClassName("cart-list-item")]
+      .find(item => +item.getAttribute("id") === product.id);
   
-    image.src = product.image;
-    title.innerText = product.title;
-    price.innerText = `${product.price}$`;
-    quantity.type = "number";
-    quantity.value = 1;
-    quantity.min = 1;
-    removeBtn.innerText = "REMOVE";
+    if (existingItem) {
+      const quantityInput = existingItem.querySelector(".cart-list-quantity-section input");
+      quantityInput.value = parseInt(quantityInput.value) + 1;
+      updateCartTotal();
+      return;
+    }
+  
+    const cartListItem = document.createElement("li");
+    cartListItem.classList.add("cart-list-item");
+    cartListItem.setAttribute("id", product.id);
+  
+    cartListItem.innerHTML = `
+      <section class="cart-list-item-section cart-list-img-section">
+        <img src="${product.image}" alt="${product.title}">
+        <h4>${product.title}</h4>
+      </section>
+      <section class="cart-list-item-section cart-list-price-section">
+        <span>${product.price}$</span>
+      </section>
+      <section class="cart-list-item-section cart-list-quantity-section">
+        <input type="number" value="1" min="1" max = "99">
+        <button class="remove-item">REMOVE</button>
+      </section>
+    `;
+  
+    cartListItem.querySelector(".remove-item").addEventListener("click", (event) => removeProductFromCart(event));
+    cartListItem.querySelector(".cart-list-quantity-section input").addEventListener("change", updateCartTotal);
+  
+    cart.appendChild(cartListItem);
     emptyCartTitle.style.display = "none";
     cartListWrapper.style.display = "block";
-    // appending values
-    cartListImgSection.append(image, title);
-    cartListPriceSection.appendChild(price);
-    cartListQuantitySection.append(quantity, removeBtn);
-    cartListItem.setAttribute("id", product.id);
-    cartListItem.append(
-      cartListImgSection,
-      cartListPriceSection,
-      cartListQuantitySection
-    );
-    cart.appendChild(cartListItem);
     updateCartTotal();
+  };
+  
+  const removeProductFromCart = (event) => {
+    event.target.closest(".cart-list-item").remove();
+    updateCartTotal();
+  
+    if (!document.querySelectorAll(".cart-list-item").length) {
+      document.querySelector(".cart-list-wrapper").style.display = "none";
+      document.querySelector(".cart-empty-title").style.display = "block";
+    }
   };
   
   const updateCartTotal = () => {
     const totalAmount = document.querySelector(".total-amount > span");
-    const cartItems = document.getElementsByClassName("cart-list-item");
     let total = 0;
-    for (const item of cartItems) {
-      const price = item.querySelector(".cart-list-price-section > span");
-      const quantity = item.querySelector(".cart-list-quantity-section > input");
-      const currentAmount = parseFloat(price.innerText) * quantity.value;
-      total += currentAmount;
-    }
+  
+    document.querySelectorAll(".cart-list-item").forEach(item => {
+        const price = parseFloat(item.querySelector(".cart-list-price-section span").innerText);
+        const quantityInput = item.querySelector(".cart-list-quantity-section input");
+
+        if (quantityInput.value > 99) {
+            quantityInput.value = 99;
+        }
+
+        total += price * quantityInput.value;
+    });
+  
     totalAmount.innerText = `${total}$`;
   };
   
   renderProducts();
+  
