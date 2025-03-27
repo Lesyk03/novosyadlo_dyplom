@@ -29,7 +29,7 @@
               <a class="header-nav__menu-item" href="#about">About us</a>
             </li>
             <li class="nav-menu-item">
-              <a class="header-nav__menu-item" href="#cards">Cards</a>
+              <a class="header-nav__menu-item" href="#carts">Cards</a>
             </li>
             <li class="nav-menu-item">
               <a class="header-nav__menu-item" href="#testimonials">
@@ -37,10 +37,10 @@
               </a>
             </li>
             <li class="nav-menu-item">
-              <a class="header-nav__menu-item" href="#contacts">Contacts</a>
+              <a class="header-nav__menu-item" href="#basket">Basket</a>
             </li>
             <li class="nav-menu-item">
-              <a class="header-nav__menu-item" href="#basket">Basket</a>
+              <a class="header-nav__menu-item" href="#contacts">Contacts</a>
             </li>
           </ul>
           <div class="header-nav__icons">
@@ -130,12 +130,27 @@
         </div>
       </section>
       <div class="about-under-bg-photo"></div>
-      <section id="cards" class="services">
+      <section id="carts" class="carts">
       </section>
+      <ul class="products-container"></ul>
+      <div class="cart">
+        <h2>Cart</h2>
+        <p class="cart-empty-title">Your cart is empty</p>
+        <div class="cart-list-wrapper">
+          <section class="cart-list-titles">
+            <h4 class="cart-list-item-title">Item</h4>
+            <h4 class="cart-list-price-title">Price</h4>
+            <h4 class="cart-list-quantity-title">Quantity</h4>
+          </section>
+          <ul class="cart-list"></ul>
+          <h3 class="total-amount">Total <span>0</span></h3>
+        </div>
+      </div>
     </main>
     <footer>
       <div class="container"></div>
     </footer>
     <script src="js/header.js"></script>
+    <script src="js/cart.js"></script>
   </body>
 </html>
