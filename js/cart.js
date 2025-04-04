@@ -93,7 +93,7 @@ const getProducts = async () => {
         total += price * quantityInput.value;
     });
   
-    totalAmount.innerText = `${total}$`;
+    totalAmount.innerText = `${total.toFixed(2)}$`;
   };
   
   renderProducts();
