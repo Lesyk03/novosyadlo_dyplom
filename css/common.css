@@ -21,6 +21,10 @@
     --primary-title-color: rgb(118, 108, 245);
     --dark-title-color:rgb(35, 34, 48);
     --dark-text-color:rgb(67, 85, 103);
+    --background-dark: #232428;
+    --chapter-font-color: #6f7380;
+    --chapter-font-color-light: #ffffff99;
+    --background-bottom-color: #14a9ee;
 }
 
 img {

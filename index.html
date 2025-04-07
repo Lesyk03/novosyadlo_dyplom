@@ -72,7 +72,7 @@
             </p>
           </div>
           <div class="previev__btns">
-            <button class="previev__btn-contact-us">Contact us</button>
+            <a href="#contacts"><button class="previev__btn-contact-us"> Contact us</button></a>
             <button class="previev__btn-pricing">Pricing</button>
           </div>
         </div>
@@ -134,7 +134,7 @@
       </section>
       <ul class="products-container"></ul>
       <div class="cart">
-        <h2>Cart</h2>
+        <h2 id="basket">Cart</h2>
         <p class="cart-empty-title">Your cart is empty</p>
         <div class="cart-list-wrapper">
           <section class="cart-list-titles">
@@ -147,8 +147,76 @@
         </div>
       </div>
     </main>
-    <footer>
-      <div class="container"></div>
+    <footer class="container" id="contacts">
+      <div>
+        <section class="contact-us">
+          <div class="contact-us__all">
+            <div class="contact-us__main-form" id="contact-us">
+              <form action="https://formspree.io/f/mdojprqd" method="post">
+                <div class="contact-us__main-form-contact">
+                  <div class="contact-us__general-title">
+                    <h4 class="chapter-font-name-light">
+                      <span class="sign-start-chapter">━</span> CONTACT US
+                    </h4>
+                  </div>
+                  <div class="contact-us__head-title">
+                    <p class="title-font-light">Book your journey!</p>
+                  </div>
+                  <div class="contact-us__main-form-title">
+                    <p class="contact-us__main-form-description">
+                      Complete the form below, and we will contact you soon to
+                      discuss the details!
+                    </p>
+                  </div>
+                </div>
+                <div class="contact-us__main-form-input">
+                  <div class="contact-us__buttom-text">
+                    <input
+                      type="text"
+                      name="user-name"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div class="contact-us__buttom-tel">
+                    <input
+                      type="tel"
+                      name="user-phone"
+                      placeholder="Your Phone"
+                      required
+                    />
+                  </div>
+                  <div class="contact-us__buttom-email">
+                    <input
+                      type="email"
+                      name="user-email"
+                      placeholder="Your Email"
+                      required
+                    >
+                  </div>
+                  <div class="contact-us__buttom-date">
+                    <input
+                      type="text"
+                    
+                      placeholder="Choose date"
+                      onfocus="(this.type='date')"
+                      onblur="(this.type='text')"
+                    >
+                  </div>
+                  <div class="contact-us__buttom-head">
+                    <input
+                      class="contact-us__buttom-head-title"
+                      type="submit"
+                      value="Request a quote"
+                    >
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="contact-us__main-form-empty"></div>
+          </div>
+        </section>
+      </div>
     </footer>
     <script src="js/header.js"></script>
     <script src="js/cart.js"></script>

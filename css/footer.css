@@ -1,0 +1,128 @@
+.contact-us {
+    background-image: url(../img/contact-us.jfif);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 34.95%;
+    width: 1800px;
+}
+#contacts {
+    margin: 0;
+    padding-top: 50px;
+}
+.title-font-light {
+    color: aliceblue;
+}
+.chapter-font-name-light{
+    color: aliceblue; 
+}
+.contact-us__main-form {
+    margin: 0 15px;
+}
+.contact-us__main-form-description {
+    line-height: 1.7;
+    font-weight: 400;
+    font-size: 17px;
+}
+.contact-us__main-form-title {
+    color: var(--chapter-font-color-light);
+    font-size: 19px;
+    font-weight: 400;
+    margin-top: 25px;
+}
+
+.contact-us__head-title {
+    letter-spacing: .03em;
+}
+
+.contact-us__main-form-input  input {
+    background-color: #2d2e34;
+    width: 100%;
+    font-size: 14px;
+    padding-left: 1em;
+    height: 3em;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+    border: transparent;
+    outline: none;
+    color: var(--chapter-font-color-light);
+    cursor: pointer;
+    transition: 0.5s all;
+}
+.contact-us__main-form-input input:focus {
+    border: 1px solid #14a9ee;
+    border-radius: 5px;
+}
+
+.contact-us__buttom-head [type="submit"] {
+    color: #FFFFFF;
+    width: 100%;
+    padding: 14px 20px;
+    margin-top: 56px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #14a9ee;
+}
+.contact-us__buttom-head-title {
+    background-color: var(--background-bottom-color);
+}
+.contact-us__main-form {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: var(--background-dark); 
+    padding: 43px 39px;
+    margin: 0 15px;
+}
+.contact-us__main-form-title {
+    letter-spacing: .03em;
+}
+.contact-us__main-form-input {
+    margin-top: 20px;
+}
+.contact-us__main-form-contact {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.contact-us__main-form-empty {
+    display: none;
+    padding: 0 15px;
+}
+.contact-us__all {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    padding: 90px 24px;
+}
+.contact-us__head-title {
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 767px) {
+    .contact-us__main-form-empty {
+       flex: 1;
+       display: flex;
+    }
+    .contact-us__all {
+        padding: 110px 32px;
+    }
+    .title-font-light {
+        font-size: 39px;
+    }
+    .contact-us__main-form {
+        padding: 52px 46px;
+    }
+ }
+ @media screen and (min-width: 991px) {
+    .contact-us__all {
+        padding: 130px 40px;
+    }
+    .title-font-light {
+        font-size: 45px;
+    }
+    .contact-us__main-form {
+        padding: 70px 60px;
+    }
+ }
