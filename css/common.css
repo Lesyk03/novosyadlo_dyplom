@@ -9,7 +9,7 @@
 :root {
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
-    min-width: 320px;
+    min-width: 375px;
     --primary-button-background-color: rgb(118, 108, 245);
     --secondary-background-color: #232230;
     --nav-menu-background-color: #3e3131;

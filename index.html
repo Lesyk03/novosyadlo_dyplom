@@ -145,7 +145,7 @@
           <ul class="cart-list"></ul>
           <h3 class="total-amount">Total <span>0</span></h3>
           <div class="order-burger">
-              <button class="order-btn">ORDER</button>
+            <button class="order-btn" onclick="sendEmail()">ORDER</button>
           </div>
         </div>
       </div>
@@ -221,8 +221,9 @@
         </section>
       </div>
     </footer>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="js/mail.js"></script>
     <script src="js/header.js"></script>
     <script src="js/cart.js"></script>
-    <script src="js/order.js"></script>
   </body>
 </html>
