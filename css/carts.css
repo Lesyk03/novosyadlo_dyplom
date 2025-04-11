@@ -178,3 +178,24 @@ ul {
         height: auto;
     }
   }
+
+  .order-burger {
+    margin-bottom: 100px;
+  }
+
+  .order-btn {
+    position: absolute;
+    right: 60px;
+    padding: 10px 15px;
+    margin: 40px 20px 0px auto;
+    border-radius: 10%;
+    border: none;
+    color: var(--primary-text-color);
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #0dc00d;
+  }
+
+  .order-btn:hover{
+    background-color: chartreuse;
+  }
