@@ -33,6 +33,7 @@ ul {
   }
   
   .product-item > p {
+    padding: 10px 5px;
     text-align: left;
     overflow: hidden;
     display: -webkit-box;
