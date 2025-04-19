@@ -1,24 +1,16 @@
+  document.querySelector("form").addEventListener("submit", function () {
+    const cartItems = document.querySelectorAll(".cart-list-item");
+    let productList = [];
 
-    (function(){
-        emailjs.init("Yeoal-73PSvd8D5EP"); // заміни на свій
-      })();
-    
-      function sendEmail() {
-        let number = window.prompt('Введіть номер телефону (до 12 символів)');
-    
-        if (!number) return; // якщо нічого не ввели — вихід
-    
-        if (number.length > 13) {
-          alert("Номер занадто довгий. Максимум 13 символів.");
-          return;
-        }
-    
-        emailjs.send("service_b40t8be", "template_ziy7q4w", {
-          user_number: number
-        })
-        .then(function(response) {
-           alert("Заявку надіслано! 👍");
-        }, function(error) {
-           alert("Помилка 😥: " + error);
-        });
-      }
+    cartItems.forEach(item => {
+      const title = item.querySelector("h4").innerText;
+      const price = item.querySelector(".cart-list-price-section span").innerText;
+      const quantity = item.querySelector(".cart-list-quantity-section input").value;
+
+      productList.push(`• ${title} — ${quantity} шт. × ${price}`);
+    });
+
+    // Вставляємо у приховане поле
+    document.getElementById("cart-items-field").value = productList.join("\n");
+  });
+
