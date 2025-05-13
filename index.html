@@ -130,6 +130,11 @@
       <div class="about-under-bg-photo"></div>
       <section id="carts" class="carts">
       </section>
+      <div class="price-filter">
+        <label>Ціна від: <input type="number" id="minPrice" placeholder="0"></label>
+        <label>до: <input type="number" id="maxPrice" placeholder="695"></label>
+        <button onclick="filterProductsByPrice()">Фільтрувати</button>
+      </div>      
       <ul class="products-container"></ul>
       <div class="cart">
         <h2 id="basket">Cart</h2>
