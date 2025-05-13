@@ -1,11 +1,23 @@
+// 🔄 Змінна для збереження всіх товарів
+let allProducts = [];
+
+// Завантаження продуктів з API
 const getProducts = async () => {
   const response = await fetch("https://fakestoreapi.com/products?limit=9");
   return await response.json();
 };
 
+// 🔄 Вивід товарів на сторінку
 const renderProducts = async () => {
   const products = await getProducts();
+  allProducts = products; // 🔄 Зберігаємо товари для фільтрації
+  displayProducts(allProducts); // 🔄 Використовуємо нову функцію відображення
+};
+
+// 🔄 Функція для динамічного виводу товарів
+const displayProducts = (products) => {
   const container = document.querySelector(".products-container");
+  container.innerHTML = ''; // 🔄 Очищення контейнера перед новим рендером
 
   products.forEach(product => {
     const item = document.createElement("li");
@@ -26,6 +38,16 @@ const renderProducts = async () => {
   });
 };
 
+// 🔄 Функція фільтрації за ціною
+function filterProductsByPrice() {
+  const min = parseFloat(document.getElementById("minPrice").value) || 0;
+  const max = parseFloat(document.getElementById("maxPrice").value) || Infinity;
+
+  const filtered = allProducts.filter(p => p.price >= min && p.price <= max);
+  displayProducts(filtered);
+}
+
+// Додавання товару до кошика
 const addToCart = (product) => {
   const cart = document.querySelector(".cart-list");
   const cartListWrapper = document.querySelector(".cart-list-wrapper");
@@ -96,4 +118,5 @@ const updateCartTotal = () => {
   totalAmount.innerText = `${total.toFixed(2)}$`;
 };
 
+// Запуск рендера при завантаженні
 renderProducts();
