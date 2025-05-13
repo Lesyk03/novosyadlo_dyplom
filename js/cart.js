@@ -118,3 +118,4 @@ const updateCartTotal = () => {
 };
 
 renderProducts();
+document.getElementById("filterButton").addEventListener("click", filterProductsByPrice);
