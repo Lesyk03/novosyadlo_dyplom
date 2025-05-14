@@ -9,9 +9,7 @@
     margin: 0;
     padding-top: 50px;
 }
-.title-font-light {
-    color: aliceblue;
-}
+
 .chapter-font-name-light{
     color: aliceblue; 
 }
@@ -30,9 +28,7 @@
     margin-top: 25px;
 }
 
-.contact-us__head-title {
-    letter-spacing: .03em;
-}
+
 
 .contact-us__main-form-input  input {
     background-color: #2d2e34;
@@ -96,9 +92,7 @@
     margin: auto;
     padding: 90px 24px;
 }
-.contact-us__head-title {
-    margin-top: 20px;
-}
+
 
 @media screen and (min-width: 767px) {
     .contact-us__main-form-empty {
@@ -108,9 +102,7 @@
     .contact-us__all {
         padding: 110px 32px;
     }
-    .title-font-light {
-        font-size: 39px;
-    }
+   
     .contact-us__main-form {
         padding: 52px 46px;
     }
@@ -118,9 +110,6 @@
  @media screen and (min-width: 991px) {
     .contact-us__all {
         padding: 130px 40px;
-    }
-    .title-font-light {
-        font-size: 45px;
     }
     .contact-us__main-form {
         padding: 70px 60px;
