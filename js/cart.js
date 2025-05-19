@@ -1,4 +1,3 @@
-// 🔄 Змінна для збереження всіх товарів
 let allProducts = [];
 
 // Завантаження продуктів з API
@@ -7,17 +6,15 @@ const getProducts = async () => {
   return await response.json();
 };
 
-// 🔄 Вивід товарів на сторінку
 const renderProducts = async () => {
   const products = await getProducts();
-  allProducts = products; // 🔄 Зберігаємо товари для фільтрації
-  displayProducts(allProducts); // 🔄 Використовуємо нову функцію відображення
+  allProducts = products; 
+  displayProducts(allProducts); 
 };
 
-// 🔄 Функція для динамічного виводу товарів
 const displayProducts = (products) => {
   const container = document.querySelector(".products-container");
-  container.innerHTML = ''; // 🔄 Очищення контейнера перед новим рендером
+  container.innerHTML = ''; // Очищення контейнера перед новим рендером
 
   products.forEach(product => {
     const item = document.createElement("li");
@@ -38,7 +35,7 @@ const displayProducts = (products) => {
   });
 };
 
-// 🔄 Функція фільтрації за ціною
+//  Функція фільтрації за ціною
 function filterProductsByPrice() {
   const min = parseFloat(document.getElementById("minPrice").value) || 0;
   const max = parseFloat(document.getElementById("maxPrice").value) || Infinity;
